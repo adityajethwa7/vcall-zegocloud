@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: vcall-zegocloud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vcall-zegocloud
+  template:
+    metadata:
+      labels:
+        app: vcall-zegocloud
+    spec:
+      containers:
+        - name: vcall-zegocloud
+          image: adityajethwa7/vcall-zegocloud-img
+          ports:
+            - containerPort: 80
